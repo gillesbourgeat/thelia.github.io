@@ -73,6 +73,11 @@
                     {% if output.from_version != nil AND output.from_version != '' %}
                      <span class="label label-default">Thelia >= {{ output.from_version }}</span>
                     {% endif %}
+                    {% if output.deprecated != nil %}
+                    <span class="label label-default">
+                        Deprecated{% if output.deprecated != ''} since {{ output.deprecated }}{% endif %}
+                    </span>
+                    {% endif %}
                 </td>
                 <td>
                     {{ output.description }}

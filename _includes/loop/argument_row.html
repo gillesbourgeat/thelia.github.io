@@ -36,6 +36,11 @@
                             <br/>
                             <span class="label label-default">Thelia >= {{ argument.from_version }}</span>
                             {% endif %}
+                            {% if argument.deprecated != nil %}
+                            <span class="label label-default">
+                                Deprecated{% if argument.deprecated != ''} since {{ argument.deprecated }}{% endif %}
+                            </span>
+                            {% endif %}
                         </td>
                         <td>
                             <p>{{ argument.description }}</p>
@@ -49,6 +54,11 @@
                                         {{ expected_value.name }}{% if expected_value.description != nil and expected_value.description != '' %} : <em>{{ expected_value.description }}</em>{% endif %}
                                         {% if expected_value.from_version != nil AND expected_value.from_version != '' %}
                                         <span class="label label-default">Thelia >= {{ expected_value.from_version }}</span>
+                                        {% endif %}
+                                        {% if expected_value.deprecated != nil %}
+                                        <span class="label label-default">
+                                            Deprecated{% if expected_value.deprecated != ''} since {{ expected_value.deprecated }}{% endif %}
+                                        </span>
                                         {% endif %}
                                     </li>
                                     {% endfor %}
@@ -98,6 +108,12 @@
                 <br/>
                 <span class="label label-default">Thelia >= {{ argument.from_version }}</span>
                 {% endif %}
+                {% if argument.deprecated != nil %}
+                <br/>
+                <span class="label label-default">
+                    Deprecated{% if argument.deprecated != ''} since {{ argument.deprecated }}{% endif %}
+                </span>
+                {% endif %}
             </td>
             <td>
                 <p>{{ argument.description }}</p>
@@ -111,6 +127,11 @@
                             {{ expected_value.name }}{% if expected_value.description != nil and expected_value.description != '' %} : <em>{{ expected_value.description }}</em>{% endif %}
                             {% if expected_value.from_version != nil AND expected_value.from_version != '' %}
                             <span class="label label-default">Thelia >= {{ expected_value.from_version }}</span>
+                            {% endif %}
+                            {% if expected_value.deprecated != nil %}
+                            <span class="label label-default">
+                                Deprecated{% if expected_value.deprecated != ''} since {{ expected_value.deprecated }}{% endif %}
+                            </span>
                             {% endif %}
                         </li>
                         {% endfor %}
