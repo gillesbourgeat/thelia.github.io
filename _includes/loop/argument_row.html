@@ -32,9 +32,9 @@
                     <tr>
                         <td>
                             {{ argument.name }} {% if argument.mandatory == "true" %}*{% endif %}{% if argument.mandatory == "double" %}**{% endif %}
-                            {% if argument.from_version != nil AND argument.from_version != '' %}
+                            {% if argument.since != nil AND argument.since != '' %}
                             <br/>
-                            <span class="label label-default">Thelia >= {{ argument.from_version }}</span>
+                            <span class="label label-info">Since {{ argument.since }}</span>
                             {% endif %}
                             {% if argument.deprecated != nil %}
                             <span class="label label-default">
@@ -52,8 +52,8 @@
                                     {% for expected_value in argument.expected_values %}
                                     <li>
                                         {{ expected_value.name }}{% if expected_value.description != nil and expected_value.description != '' %} : <em>{{ expected_value.description }}</em>{% endif %}
-                                        {% if expected_value.from_version != nil AND expected_value.from_version != '' %}
-                                        <span class="label label-default">Thelia >= {{ expected_value.from_version }}</span>
+                                        {% if expected_value.since != nil AND expected_value.since != '' %}
+                                        <span class="label label-info">Since {{ expected_value.since }}</span>
                                         {% endif %}
                                         {% if expected_value.deprecated != nil %}
                                         <span class="label label-default">
@@ -104,9 +104,9 @@
         <tr>
             <td>
                 {{ argument.name }} {% if argument.mandatory == "true" %}*{% endif %}{% if argument.mandatory == "double" %}**{% endif %}
-                {% if argument.from_version != nil AND argument.from_version != '' %}
+                {% if argument.since != nil AND argument.since != '' %}
                 <br/>
-                <span class="label label-default">Thelia >= {{ argument.from_version }}</span>
+                <span class="label label-info">Since {{ argument.since }}</span>
                 {% endif %}
                 {% if argument.deprecated != nil %}
                 <br/>
@@ -125,8 +125,8 @@
                         {% for expected_value in argument.expected_values %}
                         <li>
                             {{ expected_value.name }}{% if expected_value.description != nil and expected_value.description != '' %} : <em>{{ expected_value.description }}</em>{% endif %}
-                            {% if expected_value.from_version != nil AND expected_value.from_version != '' %}
-                            <span class="label label-default">Thelia >= {{ expected_value.from_version }}</span>
+                            {% if expected_value.since != nil AND expected_value.since != '' %}
+                            <span class="label label-info">Since {{ expected_value.since }}</span>
                             {% endif %}
                             {% if expected_value.deprecated != nil %}
                             <span class="label label-default">

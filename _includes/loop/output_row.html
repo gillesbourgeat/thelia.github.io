@@ -70,8 +70,8 @@
             <tr>
                 <td>
                     {{ output.name }}
-                    {% if output.from_version != nil AND output.from_version != '' %}
-                     <span class="label label-default">Thelia >= {{ output.from_version }}</span>
+                    {% if output.since != nil AND output.since != '' %}
+                     <span class="label label-info">Since {{ output.since }}</span>
                     {% endif %}
                     {% if output.deprecated != nil %}
                     <span class="label label-default">
